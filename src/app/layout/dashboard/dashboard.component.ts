@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
-import { PeticionesService } from '../../services/peticiones.service'
+import { PeticionesService } from '../../services/peticiones.service';
 
 
 @Component({
@@ -15,9 +15,8 @@ export class DashboardComponent implements OnInit {
 
     public title = 'Cergersoft';
     public descrip = 'A Blog Theme by Start Bootstrap 4 And Angular5';
-    public Eps:Array<any>;
-    
-    constructor(private _peticionesService : PeticionesService) {
+    public Eps: Array<any>;
+    constructor(private _peticionesService: PeticionesService) {
         this.Eps = [];
     }
 
@@ -27,12 +26,12 @@ export class DashboardComponent implements OnInit {
                 console.log(result);
                 this.Eps = result['response'];
 
-                if(!this.Eps){
-                    console.error("Error en el servidor")
+                if (!this.Eps) {
+                    console.error('Error en el servidor');
                 }
             },
-            error =>{
-                let errorMessage = <any>error;
+            error => {
+                const errorMessage = <any>error;
                 console.warn(errorMessage);
             }
         );
