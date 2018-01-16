@@ -16,7 +16,7 @@ export class PeticionesService {
         return 'hola mundo desde el servidor';
     }
 
-    getEps(){
+    getEps():Promise<any>{
         return new Promise(resolve =>{
             this._http.get(this.url)
             .subscribe(data => {

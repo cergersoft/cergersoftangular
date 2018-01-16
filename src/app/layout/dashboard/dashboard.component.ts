@@ -15,14 +15,17 @@ export class DashboardComponent implements OnInit {
 
     public title = 'Cergersoft';
     public descrip = 'A Blog Theme by Start Bootstrap 4 And Angular5';
-    public Eps;
+    public Eps:Array<any>;
     
-    constructor(private _peticionesService : PeticionesService) {}
+    constructor(private _peticionesService : PeticionesService) {
+        this.Eps = [];
+    }
 
     ngOnInit() {
         this._peticionesService.getEps().then(
             result => {
-                this.Eps = result;
+                console.log(result);
+                this.Eps = result['response'];
 
                 if(!this.Eps){
                     console.error("Error en el servidor")

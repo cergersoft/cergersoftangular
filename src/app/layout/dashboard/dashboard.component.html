@@ -17,15 +17,18 @@
 <!-- Main Content -->
 <div class="container">
     <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto" *ngFor="let eps of Eps">
-            <div class="post-preview">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-preview" *ngFor="let epss of Eps">
                 <a href="post.html">
                     <h2 class="post-title">
-                        Eps
+                        {{epss.cod_eps}}
                     </h2>
                     <h3 class="post-subtitle">
-                        {{eps.cod_eps}}
+                        {{epss.nombre_eps}}
                     </h3>
+                    <h4 class="post-subtitle">
+                        {{epss.regimen_eps}}
+                    </h4>
                 </a>
             </div>
             <hr>
